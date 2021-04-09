@@ -1,0 +1,179 @@
+{
+    "supermarkets":[
+
+        {
+            "id":1,
+            "nombre":"Gadis",
+            "direccion":"Avenida da sariñeira, n3",
+            "geolocalizacion": "https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY",
+            "vigencia":"20-12-2021",
+            "products":[
+                {
+                    "producto1.1":"tomate",
+                    "oferta":"2x1",
+                    "caducidad":"30-5-2021",
+                    "adquirido":true
+                   
+                },
+                {
+                    "producto1.2":"comida para gatos",
+                    "oferta":"50%",
+                    "caducidad":"30-4-2021",
+                    "adquirido":true
+                   
+                },
+                {
+                    "producto1.3":"lejía",
+                    "oferta":"25%",
+                    "caducidad":"30-3-2021",
+                    "adquirido":true
+                   
+                },
+                {
+                    "producto1.4":"café",
+                    "oferta":"15%",
+                    "caducidad":"30-6-2021",
+                    "adquirido":true
+                }
+            ],
+            "oferts":{
+                "lunes":"oferta en carnicería",
+                "martes":"oferta en pescadería",
+                "miercoles": "oferta en frutería",
+                "jueves": "oferta en conservas",
+                "viernes": "oferta en chucherías",
+                "sabado": "oferta en productos de limpieza",
+                "domingo": "oferta en bebidas"
+            },
+
+            "habituales":[
+                {
+                "producto1":"salsa carbonara",
+                "unidades":50,
+                "unidad de medida":"Kg"
+                },
+
+               {
+               "producto2":"papel higiénico",
+               "unidades":40,
+               "unidad de medida":"rollos",
+               "adquirido":true
+
+               },
+               {
+                "producto3":"compresas y productos básicos para la menstruacción",
+                "unidades":30,
+                "unidad de medida":"cajitas",
+                "adquirido":true
+               
+               },
+               {
+                "producto4": "pan",
+                "unidades":20,
+                "unidad de medida":"Kg",
+                "adquirido":true
+        
+               },
+               {
+                "producto5":"pasta",
+                "unidades":10,
+                "unidad de medida":"Kg",
+                "adquirido":true
+               },
+               {
+                "producto6": "lentejas",
+                "unidades":60,
+                "unidad de medida":"Kg",
+                "adquirido":true
+               }
+        ]    
+       },
+       {
+        "id":2,
+        "nombre":"Coviran",
+        "direccion":"Archer Milton, 19",
+        "geolocalizacion": "https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY",
+        "vigencia":"1-12-2021",
+        "products":[
+            {
+                "producto1.1":"lechuga",
+                "oferta":"2x1",
+                "caducidad":"30-5-2021",
+                "adquirido":true
+               
+            },
+            {
+                "producto1.2":"comida para perros",
+                "oferta":"50%",
+                "caducidad":"30-4-2021",
+                "adquirido":true
+               
+            },
+            {
+                "producto1.3":"friega suelos",
+                "oferta":"25%",
+                "caducidad":"30-3-2021",
+                "adquirido":true
+               
+            },
+            {
+                "producto1.4":"té",
+                "oferta":"15%",
+                "caducidad":"30-6-2021",
+                "adquirido":true
+            }
+        ],
+        "oferts":{
+            "lunes":"oferta en pescadería",
+            "martes":"oferta en carnicería",
+            "miercoles": "oferta en conservas",
+            "jueves": "oferta en frutería",
+            "viernes": "oferta en bebidas",
+            "sabado": "oferta en productos de limpieza",
+            "domingo": "oferta en arena para gatos"
+        },
+
+        "habituales":[
+            {
+            "producto1":"salsa pesto",
+            "unidades":50,
+            "unidad de medida":"Kg"
+            },
+
+           {
+           "producto2":"papel albal",
+           "unidades":40,
+           "unidad de medida":"rollos",
+           "adquirido":true
+
+           },
+           {
+            "producto3":"compresas y productos básicos para la menstruacción",
+            "unidades":30,
+            "unidad de medida":"cajitas",
+            "adquirido":true
+           
+           },
+           {
+            "producto4": "pan",
+            "unidades":20,
+            "unidad de medida":"Kg",
+            "adquirido":true
+    
+           },
+           {
+            "producto5":"pasta",
+            "unidades":10,
+            "unidad de medida":"Kg",
+            "adquirido":true
+           },
+           {
+            "producto6": "lentejas",
+            "unidades":50,
+            "unidad de medida":"Kg",
+            "adquirido":true
+           }
+    ]    
+   }
+    ] 
+}

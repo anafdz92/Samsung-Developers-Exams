@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myapp>
+    <superMarket> 
+    <id>1</id>
+    <nombre>Gadis</nombre>
+    <direccion>Avenida da sariñeira, n3</direccion>
+    <geolocalizacion href="https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY">Geolocalización</geolocalizacion>
+    <vigencia>20-12-2021</vigencia>
+    <products>
+
+      <product>
+      <name>tomate</name>
+      <oferta>2x1</oferta>
+      <caducidad>30-5-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>comida para gatos</name>
+      <oferta>50%</oferta>
+      <caducidad>30-4-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>lejía</name>
+      <oferta>25%</oferta>
+      <caducidad>30-3-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>cafe</name>
+      <oferta>15%</oferta>
+      <caducidad>30-6-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+    
+    </products>
+
+    <oferts>
+    <lunes>oferta en carnicería</lunes>
+    <martes>oferta en pescadería</martes>
+    <miercoles>oferta en frutería</miercoles>
+    <jueves>oferta en conservas</jueves>
+    <viernes>oferta en chucherías</viernes>
+    <sabado>oferta en productos de limpieza</sabado>
+    <domingo>oferta en bebidas</domingo>
+    </oferts>
+
+    <habituales>
+    <>
+    <producto1>salsa carbonara</producto1>
+    <unidades>50</unidades>
+    <medida>Kg</medida>
+    <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto2>papel higiénico</producto2>
+    <unidades>40</unidades>
+    <medida>rollos</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto3>compresas y productos básicos para la menstruacción</producto3>
+    <unidades>20</unidades>
+    <medida>kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto4>pan</producto4>
+    <unidades>50</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto5>pasta</producto5>
+    <unidades>10</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto6>lentejas</producto6>
+    <unidades>60</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    </habituales>
+        
+        </superMarket>
+    <superMarket>
+           <id>2</id>
+    <nombre>Coviran</nombre>
+    <direccion>Archer Milton Huntington, n19</direccion>
+    <geolocalizacion href="https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY">Geolocalización</geolocalizacion>
+    <vigencia>1-12-2021</vigencia>
+    <products>
+
+      <product>
+      <name>lechuga</name>
+      <oferta>2x1</oferta>
+      <caducidad>30-5-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>comida para perros</name>
+      <oferta>50%</oferta>
+      <caducidad>30-4-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>friega suelos</name>
+      <oferta>25%</oferta>
+      <caducidad>30-3-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+
+      <product>
+      <name>té</name>
+      <oferta>15%</oferta>
+      <caducidad>30-6-2021</caducidad>
+      <adquirido>true</adquirido>
+      </product>
+    
+    </products>
+
+    <oferts>
+    <lunes>oferta en pescadería</lunes>
+    <martes>oferta en carnicería</martes>
+    <miercoles>oferta en conservas</miercoles>
+    <jueves>oferta en frutería</jueves>
+    <viernes>oferta en bebidas</viernes>
+    <sabado>oferta en productos de limpieza</sabado>
+    <domingo>oferta en arena para gatos</domingo>
+    </oferts>
+
+    <habituales>
+    <>
+    <producto1>salsa pesto</producto1>
+    <unidades>50</unidades>
+    <medida>Kg</medida>
+    <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto2>papel albal</producto2>
+    <unidades>40</unidades>
+    <medida>rollos</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto3>compresas y productos básicos para la menstruacción</producto3>
+    <unidades>20</unidades>
+    <medida>kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto4>pan</producto4>
+    <unidades>50</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto5>pasta</producto5>
+    <unidades>10</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    <>
+    <producto6>lentejas</producto6>
+    <unidades>60</unidades>
+    <medida>Kg</medida>
+     <adquirido>true</adquirido>
+    <>
+
+    </habituales>
+        </superMarket>
+</myapp>
