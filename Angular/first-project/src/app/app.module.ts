@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatFormFieldModule
     
 
   ],

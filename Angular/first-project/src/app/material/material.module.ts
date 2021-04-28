@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 
 
+
 const MaterialComponents = [
   MatButtonModule,
   MatFormFieldModule,
@@ -20,7 +21,8 @@ const MaterialComponents = [
   MatDialogModule,
   MatButtonModule,
   ReactiveFormsModule,
-  MatTableModule
+  MatTableModule,
+  MatFormFieldModule
 ]
 
 @NgModule({
