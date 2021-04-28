@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 
 
 
+
 const MaterialComponents = [
   MatButtonModule,
   MatFormFieldModule,
@@ -22,7 +23,7 @@ const MaterialComponents = [
   MatButtonModule,
   ReactiveFormsModule,
   MatTableModule,
-  MatFormFieldModule
+  MatFormFieldModule,
 ]
 
 @NgModule({

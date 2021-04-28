@@ -5,7 +5,6 @@ import {DialogFormComponent} from './dialog-form/dialog-form.component';
 
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,9 +23,11 @@ export class AppComponent {
     
   }
 
-  // ngOnInit() {
-  //   this.updateTableUsers();
-  //   }
+  //  ngOnInit() {
+  //    this.getUsers();
+  //    }
+
+      
 
   openDialog():void{
    const dialogRef=this.dialog.open(DialogFormComponent);
@@ -36,6 +37,10 @@ export class AppComponent {
 
 
    })
+  }
+
+  getValue(){
+    return this.people;
   }
 
   selectedValue='string';
