@@ -1,0 +1,181 @@
+<div mat-dialog-content>REGISTRAR NUEVO USUARIO</div>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" name="myForm">
+  <mat-form-field
+    floatLabel="auto"
+    appearance="fill"
+    [ngClass]="{
+      error:
+        myForm.controls['nombre'].errors && !myForm.controls['nombre'].pristine
+    }"
+    dividerColor="{{
+      myForm.controls['nombre'].errors && !myForm.controls['nombre'].pristine
+        ? 'warn'
+        : 'primary'
+    }}"
+  >
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required />
+
+    <div
+      *ngIf="
+        myForm.controls['nombre'].errors && !myForm.controls['nombre'].pristine
+      "
+      class="error-msg"
+    >
+      <div [hidden]="!myForm.controls['nombre'].errors.required">
+        Oye!!! Pon tu nombre ¿no?.
+      </div>
+      <div [hidden]="!myForm.controls['nombre'].errors.patternInvalid"></div>
+    </div>
+
+    <mat-hint
+      *ngIf="
+        myForm.get('nombre').touched && myForm.get('nombre').errors?.required
+      "
+      >Min 3 characters</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field
+    floatLabel="auto"
+    appearance="fill"
+    [ngClass]="{
+      error:
+        myForm.controls['apellidos'].errors &&
+        !myForm.controls['apellidos'].pristine
+    }"
+    dividerColor="{{
+      myForm.controls['apellidos'].errors &&
+      !myForm.controls['apellidos'].pristine
+        ? 'warn'
+        : 'primary'
+    }}"
+  >
+    <mat-label>Apellidos</mat-label>
+    <input matInput formControlName="apellidos" required />
+
+    <div
+      *ngIf="
+        myForm.controls['apellidos'].errors &&
+        !myForm.controls['apellidos'].pristine
+      "
+      class="error-msg"
+    >
+      <div [hidden]="!myForm.controls['apellidos'].errors.required">
+        Oye!!! Pon tu apellido ¿no?.
+      </div>
+      <div [hidden]="!myForm.controls['apellidos'].errors.patternInvalid"></div>
+    </div>
+
+    <mat-hint
+      *ngIf="
+        myForm.get('apellidos').touched &&
+        myForm.get('apellidos').errors?.required
+      "
+      >Min 3 characters</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field
+    floatLabel="auto"
+    appearance="fill"
+    [ngClass]="{
+      error: myForm.controls['edad'].errors && !myForm.controls['edad'].pristine
+    }"
+    dividerColor="{{
+      myForm.controls['edad'].errors && !myForm.controls['edad'].pristine
+        ? 'warn'
+        : 'primary'
+    }}"
+  >
+    <mat-label>Edad</mat-label>
+    <input matInput formControlName="edad" required />
+    <div
+      *ngIf="
+        myForm.controls['edad'].errors && !myForm.controls['edad'].pristine
+      "
+      class="error-msg"
+    >
+      <div [hidden]="!myForm.controls['edad'].errors.required">
+        Oye!!! Pon tu edad ¿no?.
+      </div>
+      <div [hidden]="!myForm.controls['edad'].errors.patternInvalid"></div>
+    </div>
+    <mat-hint
+      *ngIf="myForm.get('edad').touched && myForm.get('edad').errors?.required"
+      >Between 0 and 125</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field floatLabel="auto" appearance="fill">
+    <mat-label>DNI</mat-label>
+    <input matInput formControlName="DNI" required />
+    <mat-hint
+      *ngIf="myForm.get('DNI').touched && myForm.get('DNI').errors?.required"
+      >Must have 9 characters</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field floatLabel="auto" appearance="fill">
+    <mat-label>Cumpleaños</mat-label>
+    <input
+      required
+      matInput
+      formControlName="cumpleaños"
+      [matDatepicker]="myDatePicker"
+      [min]="minDate"
+      [max]="maxDate"
+    />
+    <mat-datepicker-toggle
+      [for]="myDatePicker"
+      matSuffix
+    ></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+    <mat-hint
+      *ngIf="
+        myForm.get('cumpleaños').touched &&
+        myForm.get('cumpleaños').errors?.required
+      "
+      >Las fechas han de mostrarse en formato dd/mm/aaaa.</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field floatLabel="auto" appearance="fill">
+    <mat-label>Color Favorito</mat-label>
+    <input required matInput formControlName="color" />
+    <mat-hint
+      *ngIf="
+        myForm.get('color').touched && myForm.get('color').errors?.required
+      "
+      >Min 3 characters</mat-hint
+    >
+  </mat-form-field>
+
+  <mat-form-field floatLabel="auto" appearance="fill">
+    <mat-label>Sexo</mat-label>
+    <mat-select [(value)]="selectedValue" formControlName="sexo" required>
+      <mat-option value="mujer">Mujer</mat-option>
+      <mat-option value="hombre">Hombre</mat-option>
+      <mat-option value="otro">Otro</mat-option>
+      <mat-option value="no especificado">No especificado</mat-option>
+    </mat-select>
+    <mat-hint
+      *ngIf="myForm.get('sexo').touched && myForm.get('sexo').errors?.required"
+      >Sabemos que el Sexo es una CONSTRUCCIÓN SOCIAL pero porfi
+      especifícalo</mat-hint
+    >
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onclickNo()">Save</button> -->
+  <button
+    type="submit"
+    (click)="onclickNo()"
+    [disabled]="myForm.invalid"
+    mat-button
+    matStepperNext
+  >
+    Go to next step
+  </button>
+</div>
