@@ -1,0 +1,105 @@
+<mat-card>
+  <h2>Usuario Actual</h2>
+  <p>{{ usuario.nombre }} {{ usuario.apellido }}</p>
+</mat-card>
+
+<mat-card>
+  <form (submit)="registrarUsuario()">
+    <h2>Formulario Usuario</h2>
+    <!-- NOMBRE -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.nombre"
+        required
+        minlength="3"
+      />
+    </mat-form-field>
+    <!-- APELLIDO -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.apellido"
+        required
+        minlength="3"
+      />
+    </mat-form-field>
+    <!-- EDAD -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.edad"
+      />
+    </mat-form-field>
+    <!-- DNI -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>DNI</mat-label>
+      <input
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.dni"
+        required
+        minlength="9"
+      />
+    </mat-form-field>
+    <!-- CUMPLEAÑOS -->
+    <mat-form-field appearance="fill">
+      <mat-label>Cumpleaños</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.cumple"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- COLOR FAVORITO -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Color Favorito</mat-label>
+      <input
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.color"
+        required
+        minlength="3"
+      />
+    </mat-form-field>
+    <!-- SEXO -->
+    <mat-form-field appearance="fill">
+      <mat-label>Sexo</mat-label>
+      <select
+        matNativeControl
+        required
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.sexo"
+      >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </mat-form-field>
+    <button mat-button color="accent" type="submit">Registrar</button>
+  </form>
+</mat-card>
+
+<mat-card>
+  <div>
+    <ul>
+      <li *ngFor="let cadaUsuario of listaUsuarios; let i = index">
+        {{ cadaUsuario.nombre }}
+        <button mat-button color="accent" (click)="editar(i)">Editar</button>
+        <button mat-button color="accent" (click)="eliminar(i)">
+          Eliminar
+        </button>
+      </li>
+    </ul>
+  </div>
+</mat-card>

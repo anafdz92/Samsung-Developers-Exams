@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 //import Userservice no lo tengo creado xq lo que quiero viene de app
-import {AppComponent} from '../../app/app.component'
+
 import {Observable} from 'rxjs';
 import {DataSource} from '@angular/cdk/collections';
 import {User} from '../../app/models/user.model';
+import{UserService} from '../services/user.service';
 
 
 @Component({
@@ -13,10 +14,10 @@ import {User} from '../../app/models/user.model';
 })
 export class UsertableComponent implements OnInit {
 
-  dataSource= new UserDataSource(this.appComponent);
+  dataSource= new UserDataSource(this.userService);
   displayedColumns=['nombre', 'apellidos', 'edad', 'DNI', 'cumpleaños', 'color','sexo']
 
-  constructor(private appComponent: AppComponent) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -25,16 +26,12 @@ export class UsertableComponent implements OnInit {
 
 export class UserDataSource extends DataSource<any> {
 
- 
-
-  constructor(private appComponent: AppComponent){
-
+  constructor(private userService: UserService){
     super()
-
   }
 
   connect(): Observable<User[]>{
-    return this.appComponentappComponent.getValue()
+    return this.userService.getUser();
   }
 
   disconnect(){

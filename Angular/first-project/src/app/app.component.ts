@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogFormComponent} from './dialog-form/dialog-form.component';
-
+import {User} from '../app/models/user.model'
 
 
 
@@ -11,30 +11,19 @@ import {DialogFormComponent} from './dialog-form/dialog-form.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  people:any[];
-
+  people:User[];
 
   constructor(
     public dialog:MatDialog
-    
   ){
     this.people=[]
-    
   }
-
-  //  ngOnInit() {
-  //    this.getUsers();
-  //    }
-
-      
 
   openDialog():void{
    const dialogRef=this.dialog.open(DialogFormComponent);
    dialogRef.afterClosed().subscribe(res=>{
      this.people.push(res)
      console.group(this.people)
-
 
    })
   }

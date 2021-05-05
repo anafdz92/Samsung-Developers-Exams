@@ -19,6 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UsertableComponent } from './usertable/usertable.component';
+import {UserService} from '../app/services/user.service';
 
 // HTTP CLient Module and service I dont know if i need to create one
 
@@ -54,6 +55,7 @@ import { UsertableComponent } from './usertable/usertable.component';
     MatSortModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+   
     
     
 
@@ -61,7 +63,7 @@ import { UsertableComponent } from './usertable/usertable.component';
   entryComponents:[
     DialogFormComponent,
   ],
-  providers: [],
+  providers: [ UserService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
