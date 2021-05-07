@@ -1,0 +1,186 @@
+<mat-card>
+  <h2>Usuario Actual</h2>
+  <p>{{ usuario.nombre }} {{ usuario.apellido }}</p>
+</mat-card>
+
+<mat-card>
+  <form (submit)="registrarUsuario()" #myForm="ngForm">
+    <h2>Formulario Usuario</h2>
+    <!-- NOMBRE -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        #nombre="ngModel"
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.nombre"
+        required
+        minlength="3"
+      />
+      <div
+        *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+        class="alert"
+      >
+        <div *ngIf="nombre.errors.required">Debes incluir un nombre.</div>
+        <div *ngIf="nombre.errors.minlength">
+          El nombre debe tener al menos 3 caracteres
+        </div>
+      </div>
+    </mat-form-field>
+    <!-- APELLIDO -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input
+        id="apellido"
+        name="apellido"
+        class="form-control"
+        #apellido="ngModel"
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.apellido"
+        required
+        minlength="3"
+      />
+      <div
+        *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)"
+        class="alert"
+      >
+        <div *ngIf="apellido.errors.required">Debes incluir un apellido.</div>
+        <div *ngIf="apellido.errors.minlength">
+          El apellido debe tener al menos 3 caracteres
+        </div>
+      </div>
+    </mat-form-field>
+    <!-- EDAD -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input
+        id="edad"
+        name="edad"
+        class="form-control"
+        #edad="ngModel"
+        matInput
+        maxlength="125"
+        minlength="0"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.edad"
+        required
+      />
+      <div *ngIf="edad.invalid && (edad.dirty || edad.touched)" class="alert">
+        <div *ngIf="edad.errors.required">Debes incluir una edad.</div>
+        <div *ngIf="edad.errors.minlength">
+          La edad debe ser como mínimo de 0
+        </div>
+      </div>
+    </mat-form-field>
+    <!-- DNI -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>DNI</mat-label>
+      <input
+        id="dni"
+        name="dni"
+        class="form-control"
+        #dni="ngModel"
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.dni"
+        required
+        minlength="9"
+      />
+      <div *ngIf="dni.invalid && (dni.dirty || dni.touched)" class="alert">
+        <div *ngIf="dni.errors.required">Debes incluir un dni.</div>
+        <div *ngIf="dni.errors.minlength">
+          El dni debe tener al menos 9 caracteres
+        </div>
+      </div>
+    </mat-form-field>
+    <!-- CUMPLEAÑOS -->
+    <mat-form-field appearance="fill">
+      <mat-label>Cumpleaños</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.cumple"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- COLOR FAVORITO -->
+    <mat-form-field floatLabel="auto" appearance="fill">
+      <mat-label>Color Favorito</mat-label>
+      <input
+        id="color"
+        name="color"
+        class="form-control"
+        #color="ngModel"
+        matInput
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.color"
+        required
+        minlength="3"
+      />
+      <div
+        *ngIf="color.invalid && (color.dirty || color.touched)"
+        class="alert"
+      >
+        <div *ngIf="color.errors.required">Debes incluir un color.</div>
+        <div *ngIf="color.errors.minlength">
+          El color debe tener al menos 3 caracteres
+        </div>
+      </div>
+    </mat-form-field>
+    <!-- SEXO -->
+    <mat-form-field appearance="fill">
+      <mat-label>Sexo</mat-label>
+      <select
+        id="sexo"
+        name="sexo"
+        class="form-control"
+        #sexo="ngModel"
+        matNativeControl
+        required
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="usuario.sexo"
+      >
+        <div *ngIf="sexo.invalid && (sexo.dirty || sexo.touched)" class="alert">
+          <div *ngIf="sexo.errors.required">
+            Sabemos que el sexo es una construcción social pero porfa
+            especifícalo.
+          </div>
+        </div>
+        <option value="Mujer">Mujer</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Queer">Queer</option>
+        <option value="No especificado">No especificado</option>
+      </select>
+    </mat-form-field>
+
+    <button mat-button color="accent" type="submit" [disabled]="myForm.invalid">
+      Registrar
+    </button>
+  </form>
+</mat-card>
+
+<mat-card>
+  <div>
+    <ul>
+      <li *ngFor="let cadaUsuario of listaUsuarios; let i = index">
+        <p>Nombre {{ cadaUsuario.nombre }}</p>
+        <p>Apellido {{ cadaUsuario.apellido }}</p>
+        <p>Edad {{ cadaUsuario.edad }}</p>
+        <p>Dni {{ cadaUsuario.dni }}</p>
+        <p>Cumple{{ cadaUsuario.cumple }}</p>
+        <p>Color {{ cadaUsuario.color }}</p>
+        <p>Sexo {{ cadaUsuario.sexo }}</p>
+        <button mat-button color="accent" (click)="editar(i)">Editar</button>
+        <button mat-button color="accent" (click)="eliminar(i)">
+          Eliminar
+        </button>
+      </li>
+    </ul>
+  </div>
+</mat-card>

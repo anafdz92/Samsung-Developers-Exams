@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
 import { MaterialModule } from './material/material.module';
-
+//import {MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -18,7 +18,9 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     FormsModule,
     NoopAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    //MatDialogRef,
+    
     
   ],
   providers: [],

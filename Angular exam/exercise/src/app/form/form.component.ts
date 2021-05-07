@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario}from './../usuario';
-//import {Validators,} from '@angular/forms';
-//import {customValidationService } from './../../custom-validation.service';
+
+
 
 @Component({
   selector: 'app-form',
@@ -21,7 +21,7 @@ export class FormComponent implements OnInit {
  usuario: Usuario={
    nombre:"",
    apellido:"",
-   edad:0,
+   edad:null,
    dni:null,
    cumple:null,
    color:"",
@@ -29,32 +29,41 @@ export class FormComponent implements OnInit {
  }
 
  registrarUsuario():void{
+   
    if(this.accion==='insertar'){
-    if (this.usuario.edad>0 && this.usuario.edad < 125) {
-      
-    this.listaUsuarios.push(this.usuario)
+    if(this.usuario.nombre &&
+      this.usuario.apellido && 
+      this.usuario.dni && 
+      this.usuario.cumple && 
+      this.usuario.color &&
+      this.usuario.sexo &&
+      this.usuario.edad){
+        if(this.usuario.edad>0 && 
+          this.usuario.edad < 125){
+            this.listaUsuarios.push(this.usuario)
+          }else{
+            alert("La edad debe estar entre 0 y 120")
+          }
+ 
+    } else{
+     alert("Todos los campos son obligatorios")
     }
-    else{
-      alert("la edad debe estar entre 0 y 125")
-    }
-
-
-
-    this.listaUsuarios.push(this.usuario)
+    
   
-   }else{
-     this.listaUsuarios[this.posicion]=this.usuario;
+  }else{
+      this.listaUsuarios[this.posicion]=this.usuario;
+      this.accion='insertar'
      
+     }
+     this.usuario={
+       nombre:"",
+       apellido:"",
+       edad:null,
+       dni:null,
+       cumple:null,
+       color:"",
+       sexo:""
     }
-    this.usuario={
-      nombre:"",
-      apellido:"",
-      edad:0,
-      dni:null,
-      cumple:null,
-      color:"",
-      sexo:""
-   }
   
    }  
    
@@ -71,7 +80,7 @@ export class FormComponent implements OnInit {
     this.usuario={
       nombre:"",
       apellido:"",
-      edad:0,
+      edad:null,
       dni:null,
       cumple:null,
       color:"",
@@ -84,5 +93,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }
